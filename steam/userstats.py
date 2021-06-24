@@ -10,7 +10,10 @@ STEAMUSERSTATS_INTERFACE_VERSION=b"STEAMUSERSTATS_INTERFACE_VERSION012"
 
 class SteamUserStats(Structure):
 	_fields_=[
-	# Ask the server to send down this user's data and achievements for this game.
+	# Asynchronously request the user's current stats and achievements from the server.
+	# You must always call this first to get the initial status of stats and achievements.
+	# Only after the resulting callback comes back can you start calling the
+	# rest of the stats and achievement functions for the current user.
 	("RequestCurrentStats",THISFUNCTYPE(c_bool)),
 	# Data accessors.
 	("GetStatInt32",THISFUNCTYPE(c_bool,c_char_p,POINTER(c_int32))),

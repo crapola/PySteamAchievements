@@ -4,6 +4,7 @@ from ctypes import byref,c_bool,c_char_p
 import os
 import json
 import subprocess
+import time
 # local
 import steam.steam
 import steam.client
@@ -64,7 +65,8 @@ If both [appid] and [achname] are passed, it will try to unlock that achievement
 	if not isteamuserstats:
 		raise RuntimeError("GetISteamUserStats() failed.")
 	ok=deref(isteamuserstats).RequestCurrentStats(isteamuserstats)
-
+	# Wait for stats to arrive.
+	time.sleep(1)
 	if not appid:
 		result=user_info(isteamclient,isteamuser,user,pipe,s.path)
 	elif args.achname:
