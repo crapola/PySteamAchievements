@@ -11,7 +11,12 @@ def make_treeview_sortable(treeview:ttk.Treeview):
 	""" Based on https://stackoverflow.com/a/1967793 """
 	def sort_column(tv,col,reverse):
 		l=[(tv.set(k,col),k) for k in tv.get_children('')]
-		l.sort(reverse=reverse)
+		def try_int(x):
+			try:
+				return int(x)
+			except ValueError:
+				return x
+		l.sort(reverse=reverse,key=lambda x:try_int(x[0]))
 		# Rearrange items in sorted positions.
 		for index,(val,k) in enumerate(l):
 				tv.move(k,'', index)
@@ -155,6 +160,6 @@ if __name__=="__main__":
 	def test_unlock(a,n):
 		print("Get",a,n)
 		return True
-	games={220:"Half Life 2",8000000:"Half Life 3",440:"Team Fortress 2",12345:"Test"}
+	games={220:"Half Life 2",8000000:"Half Life 3",440:"Team Fortress 2",12345:"Test",21000:"Abcd",0:"Zaxxon"}
 	user_info={"name":"InterfaceTester","id":1234567890,"apps":games}
 	Application.run(user_info,test_achievements_callback,test_unlock)
