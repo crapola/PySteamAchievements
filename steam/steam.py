@@ -31,7 +31,7 @@ class Steam:
 	def load(self):
 		if self.handle!=None:
 			return
-		wd=os.getcwd()
-		os.chdir(self.path)
-		self.handle=ctypes.WinDLL("steamclient64.dll")
-		os.chdir(wd)
+		#wd=os.getcwd()
+		#os.chdir(self.path)
+		self.handle=ctypes.WinDLL(self.path+"/steamclient64.dll")
+		#os.chdir(wd)
