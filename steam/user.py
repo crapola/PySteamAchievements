@@ -1,10 +1,8 @@
 # std
-from ctypes import Structure, POINTER
-from ctypes import (c_bool,c_char,c_wchar,c_byte,c_ubyte,c_short,c_ushort,c_int,
-c_uint,c_long,c_ulong,c_longlong,c_ulonglong,c_size_t,c_ssize_t,c_float,
-c_double,c_longdouble,c_char_p,c_wchar_p,c_void_p)
+from ctypes import POINTER, Structure, c_bool
+
 # local
-from .common import *
+from steam.common import *
 
 STEAMUSER_INTERFACE_VERSION=b"SteamUser021"
 

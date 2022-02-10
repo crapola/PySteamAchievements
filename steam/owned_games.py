@@ -2,6 +2,7 @@
 # https://github.com/ValvePython/vdf
 import vdf
 
+
 def owned_games(steam_path:str,account_id)->tuple:
 	"""
 	Return owned games as list of AppID's.

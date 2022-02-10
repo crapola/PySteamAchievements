@@ -1,7 +1,7 @@
 # std
 import ctypes
-import os
 import winreg
+
 
 def steam_path_from_registry()->str:
 	k=winreg.OpenKey(winreg.HKEY_LOCAL_MACHINE,"SOFTWARE\Wow6432Node\Valve\Steam")
@@ -31,7 +31,5 @@ class Steam:
 	def load(self):
 		if self.handle!=None:
 			return
-		#wd=os.getcwd()
-		#os.chdir(self.path)
 		self.handle=ctypes.WinDLL(self.path+"/steamclient64.dll")
-		#os.chdir(wd)
+

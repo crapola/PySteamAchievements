@@ -1,13 +1,12 @@
 # std
-from ctypes import Structure,CFUNCTYPE,POINTER
-from ctypes import (c_bool,c_char,c_wchar,c_byte,c_ubyte,c_short,c_ushort,c_int,
-c_uint,c_long,c_ulong,c_longlong,c_ulonglong,c_size_t,c_ssize_t,c_float,
-c_double,c_longdouble,c_char_p,c_wchar_p,c_void_p)
+from ctypes import (CFUNCTYPE, POINTER, Structure, c_bool, c_char_p, c_int,
+                    c_void_p)
+
 # local
-from .common import *
-from .friends import *
-from .userstats import *
-from .user import *
+from steam.common import *
+from steam.friends import *
+from steam.user import *
+from steam.userstats import *
 
 STEAMCLIENT_INTERFACE_VERSION="SteamClient020"
 

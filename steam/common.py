@@ -1,4 +1,5 @@
-from ctypes import c_int,c_int32, c_int64,c_void_p,CFUNCTYPE
+from ctypes import CFUNCTYPE, c_int, c_int32, c_int64, c_void_p
+
 
 class EAccountType(c_int):
 	k_EAccountTypeInvalid=0

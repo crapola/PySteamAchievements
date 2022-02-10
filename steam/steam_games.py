@@ -1,6 +1,9 @@
 # std
 import json
+
+# libs
 import requests
+
 
 def steam_games():
 	"""

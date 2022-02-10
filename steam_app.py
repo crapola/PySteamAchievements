@@ -13,7 +13,7 @@ def run_steam_app(*args):
 	proc=subprocess.run(['python','steam_app.py',*args],capture_output=True)
 	result=proc.stdout
 	print("stdout:",result)
-	if len(proc.stderr)>0:
+	if proc.stderr:
 		print("stderr:",proc.stderr)
 		return {}
 	d=json.loads(result)
